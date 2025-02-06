@@ -51,7 +51,7 @@ namespace :jupyter do
     ].each do |cfg|
       sh "rm -rf #{Shellwords.shellescape(ipython_dir.to_s)}/kernels/#{cfg.kernel_name}"
 
-      sh "cp -r #{Shellwords.shellescape(ipython_dir.to_s)}/kernels/ruby #{Shellwords.shellescape(ipython_dir.to_s)}/kernels/#{cfg.kernel_name}"
+      sh "cp -r #{Shellwords.shellescape(ipython_dir.to_s)}/kernels/ruby3 #{Shellwords.shellescape(ipython_dir.to_s)}/kernels/#{cfg.kernel_name}"
 
       kernel_file = File.expand_path("kernels/#{cfg.kernel_name}/kernel.json", ipython_dir.to_s)
       kernel_h = JSON.parse(File.read(kernel_file))
